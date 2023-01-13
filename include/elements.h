@@ -6,7 +6,7 @@
 /*   By: jyurrita <jyurrita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 12:28:25 by jyurrita          #+#    #+#             */
-/*   Updated: 2023/01/12 12:25:32 by jyurrita         ###   ########.fr       */
+/*   Updated: 2023/01/13 16:09:30 by jyurrita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ typedef enum e_mandelbrot_param
 }	t_mandelbrot_param;
 
 typedef struct	s_pos {
-	int x;
-	int y;
+	double x;
+	double y;
 	int map_x;
 	int map_y;
 }	t_pos;
