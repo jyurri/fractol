@@ -6,7 +6,7 @@
 #    By: jyurrita <jyurrita@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 10:01:50 by jyurrita          #+#    #+#              #
-#    Updated: 2023/01/10 11:41:23 by jyurrita         ###   ########.fr        #
+#    Updated: 2023/01/17 18:18:22 by jyurrita         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,9 +33,21 @@ LIBFT			=	${LIBFT_DIR}/libft.a
 
 NAME			=	fractol
 
-SRCS			=	fractol.c 
-					
+EVENTS			=	key_hook.c \
+					mouse_hook.c
 
+MANDELBROT		=	paint_mandelbrot.c
+
+MAP				=	inicialize_map_params.c \
+					map_point.c \
+					zoom_map.c \
+					center_map.c
+					
+SRCS			=	fractol.c \
+					${EVENTS:%=events/%} \
+					${MANDELBROT:%=mandelbrot/%} \
+					${MAP:%=map/%} \
+					
 OBJS			=	${SRCS:%.c=bin/%.o} 
 
 
