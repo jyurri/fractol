@@ -6,7 +6,7 @@
 #    By: jyurrita <jyurrita@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 10:01:50 by jyurrita          #+#    #+#              #
-#    Updated: 2023/01/17 18:18:22 by jyurrita         ###   ########.fr        #
+#    Updated: 2023/01/24 10:21:30 by jyurrita         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ TITLE		=	\033[38;5;33m
 # Compile variables
 LIB_CC			=	ar rcT
 CC				=	gcc
-FLAGS			=	-Wall -Wextra -Werror -Imlx#-fsanitize=address
+FLAGS			=	-Wall -Wextra -Werror -Imlx #-fsanitize=address
 COMPILE			=	$(CC) $(FLAGS) -I include/ -I libftMaster/include/
 
 # ************ CODE ************
@@ -36,17 +36,28 @@ NAME			=	fractol
 EVENTS			=	key_hook.c \
 					mouse_hook.c
 
-MANDELBROT		=	paint_mandelbrot.c
+FORMAT			=	format_julia_arg.c \
+					format_user_input.c
+
+INIT_PARAMS		=	inicialize_mlx.c
+
+FRACTALS		=	paint_fractal.c \
+					julia.c \
+					mandelbrot.c \
+					supermandelbrot.c
 
 MAP				=	inicialize_map_params.c \
 					map_point.c \
 					zoom_map.c \
+					zoom_out_map.c \
 					center_map.c
 					
 SRCS			=	fractol.c \
 					${EVENTS:%=events/%} \
-					${MANDELBROT:%=mandelbrot/%} \
+					${FRACTALS:%=fractals/%} \
 					${MAP:%=map/%} \
+					${FORMAT:%=format/%} \
+					${INIT_PARAMS:%=init_params/%}
 					
 OBJS			=	${SRCS:%.c=bin/%.o} 
 

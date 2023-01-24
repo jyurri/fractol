@@ -6,17 +6,17 @@
 /*   By: jyurrita <jyurrita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 18:15:44 by jyurrita          #+#    #+#             */
-/*   Updated: 2023/01/17 18:16:19 by jyurrita         ###   ########.fr       */
+/*   Updated: 2023/01/19 19:09:41 by jyurrita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <fractol.h>
+#include <fractol.h>
 
-void center_map(int x, int y, t_mlx_params *mlx_params)
+void	center_map(int x, int y, t_mlx_params *mlx_params)
 {
-	t_map_params 	*map_params;
-	t_pos *new_center;
-	
+	t_map_params	*map_params;
+	t_pos			*new_center;
+
 	map_params = mlx_params->map_params;
 	new_center = (t_pos *)malloc(sizeof(t_pos));
 	new_center->map_x = x;
